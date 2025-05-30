@@ -36,6 +36,15 @@ module.exports.commonStartMenu = async function (bot, msg, lang = 'pl') {
   }
 }
 
+module.exports.commonSecondMenu = async function (bot, msg, lang = 'pl') {
+  await bot.sendMessage(msg.chat.id, buttonsConfig["forSearchingButtons"].title[lang], {
+    reply_markup: {
+      keyboard: buttonsConfig["forSearchingButtons"].buttons[lang],
+      resize_keyboard: true
+    }
+  })
+}
+
 module.exports.settingsMenu = async function (bot, msg, lang = 'en') {
   await bot.sendMessage(msg.chat.id, buttonsConfig["settingsButtons"].title[lang], {
     reply_markup: {

@@ -58,8 +58,7 @@ async function handler(bot, msg) {
       await menu.textTranslation(bot, msg)
       break
     case '0_1':
-      await textInput(bot, msg, data)
-      await menu.commonChoice(bot, msg, lang)
+      await menu.commonSecondMenu(bot, msg, lang)
       break
     case '0_2':
       await menu.notTextScene(bot, msg, lang)

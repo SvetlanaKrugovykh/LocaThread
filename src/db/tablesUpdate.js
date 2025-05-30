@@ -1,6 +1,6 @@
 const pool = require('./pool')
 const dotenv = require('dotenv')
-const districts = require('../data/consts').districts
+const { districts, types, ranges } = require('../data/consts')
 dotenv.config()
 
 const tableQueries = {
@@ -25,7 +25,17 @@ const tableQueries = {
       CREATE TABLE districts (
         id SERIAL PRIMARY KEY,
         name VARCHAR(64) NOT NULL UNIQUE
-      )`
+      )`,
+  'apartment_types': `
+      CREATE TABLE apartment_types (
+        id SERIAL PRIMARY KEY,
+        name_pl VARCHAR(64) NOT NULL UNIQUE
+      )`,
+  'price_ranges': `
+      CREATE TABLE price_ranges (
+        id SERIAL PRIMARY KEY,
+        range_pl VARCHAR(64) NOT NULL UNIQUE
+      )`,
 }
 
 
@@ -33,6 +43,8 @@ module.exports.updateTables = function () {
   checkAndCreateTable('tg_users')
     .then(() => checkAndCreateTable('tg_msgs'))
     .then(() => checkAndCreateTable('districts', true))
+    .then(() => checkAndCreateTable('apartment_types', true))
+    .then(() => checkAndCreateTable('price_ranges', true))
     .then(() => {
       console.log('All tables created or already exist.')
     })
@@ -61,6 +73,12 @@ function checkAndCreateTable(tableName, fillInitialData = false) {
             .then(() => {
               if (fillInitialData && tableName === 'districts') {
                 return fillDistrictsTable()
+              }
+              if (fillInitialData && tableName === 'apartment_types') {
+                return fillApartmentTypesTable()
+              }
+              if (fillInitialData && tableName === 'price_ranges') {
+                return fillPriceRangesTable()
               }
             })
             .then(resolve)
@@ -106,6 +124,38 @@ function fillDistrictsTable() {
         reject(err)
       } else {
         console.log('Districts table filled with initial data.')
+        resolve()
+      }
+    })
+  })
+}
+
+function fillApartmentTypesTable() {
+  const values = types.map((name) => `('${name.replace("'", "''")}')`).join(',')
+  const query = `INSERT INTO apartment_types (name_pl) VALUES ${values};`
+  return new Promise((resolve, reject) => {
+    pool.query(query, (err, res) => {
+      if (err) {
+        console.error('Error filling apartment_types table:', err)
+        reject(err)
+      } else {
+        console.log('apartment_types table filled with initial data.')
+        resolve()
+      }
+    })
+  })
+}
+
+function fillPriceRangesTable() {
+  const values = ranges.map((range) => `('${range.replace("'", "''")}')`).join(',')
+  const query = `INSERT INTO price_ranges (range_pl) VALUES ${values};`
+  return new Promise((resolve, reject) => {
+    pool.query(query, (err, res) => {
+      if (err) {
+        console.error('Error filling price_ranges table:', err)
+        reject(err)
+      } else {
+        console.log('price_ranges table filled with initial data.')
         resolve()
       }
     })
