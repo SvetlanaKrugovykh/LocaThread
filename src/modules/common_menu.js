@@ -64,13 +64,14 @@ module.exports.choiceFromBD = async function (bot, msg, lang = 'pl', choice) {
 module.exports.commonStartMenu = async function (bot, msg, lang = 'pl') {
   console.log(`/start at ${new Date()} tg_user_id: ${msg.chat.id}`)
 
+  const user = await getU.getUser(msg.chat.id)
+  console.log(user)
+
   if (isAdmin(msg.chat.id)) {
-    await menuStarter(bot, msg, lang = 'pl')
+    let lang = 'pl'
+    if (user) lang = user?.language_code || 'pl'
+    await menuStarter(bot, msg, lang)
   } else {
-
-    const user = await getU.getUser(msg.chat.id)
-    console.log(user)
-
     if (user) {
       const lang = user?.language_code || 'pl'
       await menuStarter(bot, msg, lang)
