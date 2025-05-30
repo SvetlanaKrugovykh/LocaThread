@@ -38,7 +38,7 @@ bot.on('message', async (msg) => {
   if (msg.text === '/start') {
     console.log(new Date())
     console.log(msg.chat)
-    await menu.commonStartMenu(bot, msg, true)
+    await menu.commonStartMenu(bot, msg)
   } else {
     await handler(bot, msg, undefined)
   }
@@ -46,7 +46,7 @@ bot.on('message', async (msg) => {
 
 bot.on('text', async (msg) => {
 
-  let lang = getU.getLanguage(msg.chat.id)
+  let lang = await getU.getLanguage(msg.chat.id)
   if (!lang) lang = 'pl'
 
   if (msg.text.includes('✍')) {
@@ -61,6 +61,7 @@ bot.on('callback_query', async (callbackQuery) => {
     await bot.answerCallbackQuery(callbackQuery.id)
     const action = callbackQuery.data
     const msg = callbackQuery.message
+
     console.log('Callback query received:', action)
 
     if (globalBuffer[chatId] === undefined) globalBuffer[chatId] = {}
@@ -68,7 +69,9 @@ bot.on('callback_query', async (callbackQuery) => {
     if (action.startsWith('select_client_')) {
       const targetChatId = action.split('_')[2]
       console.log(`Target client ID: ${targetChatId}`)
-      await menu.notTextScene(bot, msg, "en", true, false, targetChatId)
+      let lang = await getU.getLanguage(targetChatId)
+      if (!lang) lang = 'pl'
+      await menu.notTextScene(bot, msg, lang, true, false, targetChatId)
     }
   } catch (error) {
     console.log(error)

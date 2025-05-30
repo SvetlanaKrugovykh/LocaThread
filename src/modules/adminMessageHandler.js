@@ -1,4 +1,4 @@
-const { globalBuffer } = require('../globalBuffer')
+const { globalBuffer, selectedByUser } = require('../globalBuffer')
 
 module.exports.handleAdminResponse = async function (bot, adminMsg) {
   try {
@@ -10,12 +10,18 @@ module.exports.handleAdminResponse = async function (bot, adminMsg) {
     }
 
     const clientIds = Object.keys(globalBuffer.msgQueue).slice(0, 10)
-    const buttons = clientIds.map(chatId => [
-      {
-        text: `Client ID: ${chatId} (${globalBuffer.msgQueue[chatId].length} msgs) - ${globalBuffer.msgQueue[chatId][0]?.content || 'No content'}`,
-        callback_data: `select_client_${chatId}`
-      }
-    ])
+    const buttons = clientIds.map(chatId => {
+      const user = selectedByUser[chatId] || {}
+      const firstName = (user.first_name || '').trim()
+      const lastName = (user.last_name || '').trim()
+      const username_ = (firstName + ' ' + lastName).trim() || 'Unknown User'
+      return [
+        {
+          text: `Client ID: ${chatId} ${username_} (${globalBuffer.msgQueue[chatId].length} msgs) - ${globalBuffer.msgQueue[chatId][0]?.content || 'No content'}`,
+          callback_data: `select_client_${chatId}`
+        }
+      ]
+    })
 
     await bot.sendMessage(adminId, 'Select a client to respond to:', {
       reply_markup: {

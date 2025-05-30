@@ -16,18 +16,19 @@ function isAdmin(userId) {
   return ADMINS.includes(String(userId))
 }
 
-module.exports.commonStartMenu = async function (bot, msg) {
+module.exports.commonStartMenu = async function (bot, msg, lang = 'pl') {
   console.log(`/start at ${new Date()} tg_user_id: ${msg.chat.id}`)
 
   if (isAdmin(msg.chat.id)) {
-    await menuStarter(bot, msg, buttonsConfig["starterButtons"])
+    await menuStarter(bot, msg, lang = 'pl')
   } else {
 
     const user = await getU.getUser(msg.chat.id)
     console.log(user)
 
     if (user) {
-      await menuStarter(bot, msg, buttonsConfig["starterButtons"])
+      const lang = user?.language_code || 'pl'
+      await menuStarter(bot, msg, lang)
     } else {
       await module.exports.settingsMenu(bot, msg)
       await blockMenu(bot, msg)
@@ -125,22 +126,22 @@ module.exports.notTextScene = async function (bot, msg, lang = "en", toSend = tr
           if (toSend) {
             await bot.sendMessage(
               GROUP_ID,
-              `Message from ${msg.chat.first_name} ${msg.chat.last_name} (ID: ${msg.chat.id}):\n${message.content}`,
+              `${texts[lang]['0_25']} ${msg.chat.first_name} ${msg.chat.last_name} (ID: ${msg.chat.id}):\n${message.content}`,
               { parse_mode: "HTML" }
             )
           }
         } else {
           await bot.sendMessage(
             GROUP_ID,
-            `Reply from admin group:\n${message.content}`,
+            `${texts[lang]['0_24']}\n${message.content}`,
             { parse_mode: "HTML" }
           )
         }
       } else {
         if (toSend) {
           const header = !toChatID
-            ? `Message from ${msg.chat.first_name} ${msg.chat.last_name} (ID: ${msg.chat.id}):`
-            : `Reply from admin group:\n`
+            ? `${texts[lang]['0_25']} ${msg.chat.first_name} ${msg.chat.last_name} (ID: ${msg.chat.id}):`
+            : `${texts[lang]['0_24']}\n`
           await bot.sendMessage(GROUP_ID, header, { parse_mode: "HTML" })
         }
         if (message.type === 'photo') {
@@ -175,19 +176,6 @@ module.exports.notTextScene = async function (bot, msg, lang = "en", toSend = tr
 
 async function blockMenu(bot, msg, lang = "pl") {
   await bot.sendMessage(msg.chat.id, texts[lang]['block'], {})
-}
-
-module.exports.translation = async function (bot, msg, data) {
-  const chatId = msg?.chat?.id
-  if (!chatId || !msg?.text) return
-
-  const text = selectedByUser[chatId].text
-  if (!text || text === '') return
-
-  const lang = selectedByUser[chatId].language || 'pl'
-  const answer = await langS.getLangData(text, chatId, bot, lang)
-  if (!answer) return null
-  return answer
 }
 
 async function downloadFile(bot, fileId, dest) {

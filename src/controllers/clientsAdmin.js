@@ -31,9 +31,8 @@ module.exports.menuStarter = async function (bot, msg, lang = 'pl') {
   console.log(((new Date()).toLocaleTimeString()))
 }
 
-module.exports.sendstarterButtons = async function (bot, msg) {
+module.exports.sendstarterButtons = async function (bot, msg, lang = 'pl') {
   const { title, buttons } = buttonsConfig["starterButtons"]
-  const lang = selectedByUser[msg.chat.id]?.language || 'pl'
   const adminIds = process.env.ADMINS.split(',').map(id => id.trim())
   const userButtons = [...buttons[lang]]
 

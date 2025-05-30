@@ -1,4 +1,5 @@
 const pool = require('./pool')
+const { selectedByUser } = require('../globalBuffer')
 
 module.exports.getLanguage = async function (chatId) {
   return new Promise((resolve, reject) => {
@@ -34,5 +35,23 @@ module.exports.getUser = async function (chatId) {
       }
     )
   })
+}
+
+module.exports.getUserData = async function (chatId, toChange = false) {
+  if (!selectedByUser[chatId] || toChange) {
+    selectedByUser[chatId] = {}
+    const user = await module.exports.getUser(chatId)
+    if (user) {
+      selectedByUser[chatId] = {
+        language: user.language_code,
+        first_name: user.first_name,
+        last_name: user.last_name,
+        username: user.username
+      }
+    } else {
+      selectedByUser[chatId] = {}
+    }
+  }
+  return selectedByUser[chatId]
 }
 
