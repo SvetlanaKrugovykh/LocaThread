@@ -55,7 +55,6 @@ async function handler(bot, msg) {
   switch (data) {
     case '0_0':
       await textInput(bot, msg, data)
-      await menu.textTranslation(bot, msg)
       break
     case '0_1':
       await menu.commonSecondMenu(bot, msg, lang)

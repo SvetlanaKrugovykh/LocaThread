@@ -60,11 +60,20 @@ bot.on('callback_query', async (callbackQuery) => {
   try {
     const chatId = callbackQuery.message.chat.id
     const action = callbackQuery.data
+    const msg = callbackQuery.message
 
     console.log('Callback query received:', `${chatId}: ${action}`)
 
     if (globalBuffer[chatId] === undefined) globalBuffer[chatId] = {}
-    saveUserChoice(chatId, action)
+    if (action.startsWith('select_client_')) {
+      const targetChatId = action.split('_')[2]
+      console.log(`Target client ID: ${targetChatId}`)
+      let lang = await getU.getLanguage(targetChatId)
+      if (!lang) lang = 'pl'
+      await menu.notTextScene(bot, msg, lang, true, false, targetChatId)
+    } else {
+      saveUserChoice(chatId, action)
+    }
 
   } catch (error) {
     console.log(error)
