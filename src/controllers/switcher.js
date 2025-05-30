@@ -81,6 +81,11 @@ async function handler(bot, msg) {
     case '1_2':
       await menu.chooseNativeLanguageMenu(bot, msg)
       break
+    case '5_1':
+    case '5_2':
+    case '5_3':
+      await menu.choiceFromBD(bot, msg, lang, data)
+      break
     case '9_1':
     case '9_2':
     case '9_3':

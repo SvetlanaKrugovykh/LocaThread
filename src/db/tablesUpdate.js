@@ -36,6 +36,14 @@ const tableQueries = {
         id SERIAL PRIMARY KEY,
         range_pl VARCHAR(64) NOT NULL UNIQUE
       )`,
+  'user_choices': `
+    CREATE TABLE user_choices (
+      id SERIAL PRIMARY KEY,
+      user_id BIGINT NOT NULL,
+      category VARCHAR(32) NOT NULL,      
+      value VARCHAR(128) NOT NULL,        
+      created_at TIMESTAMP NOT NULL DEFAULT NOW()
+    )`,
 }
 
 
@@ -45,6 +53,7 @@ module.exports.updateTables = function () {
     .then(() => checkAndCreateTable('districts', true))
     .then(() => checkAndCreateTable('apartment_types', true))
     .then(() => checkAndCreateTable('price_ranges', true))
+    .then(() => checkAndCreateTable('user_choices'))
     .then(() => {
       console.log('All tables created or already exist.')
     })

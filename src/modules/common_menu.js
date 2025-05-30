@@ -5,8 +5,9 @@ const { menuStarter } = require('../controllers/clientsAdmin')
 const { respondToSelectedClient } = require('../modules/adminMessageHandler')
 require('dotenv').config()
 const { buttonsConfig, texts } = require('../data/keyboard')
-const { selectedByUser, globalBuffer } = require('../globalBuffer')
+const { globalBuffer } = require('../globalBuffer')
 const getU = require('../db/getU')
+const getAllFromTable = require('../db/getData').getAllFromTable
 
 const ADMINS = process.env.ADMINS
   ? process.env.ADMINS.split(',').map(id => id.trim())
@@ -14,6 +15,50 @@ const ADMINS = process.env.ADMINS
 
 function isAdmin(userId) {
   return ADMINS.includes(String(userId))
+}
+
+module.exports.choiceFromBD = async function (bot, msg, lang = 'pl', choice) {
+  let tableName, nameField, prefix
+
+  switch (choice) {
+    case '5_1':
+      tableName = 'districts'
+      nameField = 'name'
+      prefix = '5_1'
+      break
+    case '5_2':
+      tableName = 'apartment_types'
+      nameField = 'name_pl'
+      prefix = '5_2'
+      break
+    case '5_3':
+      tableName = 'price_ranges'
+      nameField = 'range_pl'
+      prefix = '5_3'
+      break
+    default:
+      await bot.sendMessage(msg.chat.id, texts[lang]['0_25'])
+      return
+  }
+
+  let items
+  try {
+    items = await getAllFromTable(tableName, nameField)
+  } catch (err) {
+    await bot.sendMessage(msg.chat.id, texts[lang]['0_27'])
+    return
+  }
+
+  const buttons = items.map(item => ([{
+    text: item,
+    callback_data: `${prefix}_${item}`
+  }]))
+
+  await bot.sendMessage(msg.chat.id, texts[lang]['0_28'], {
+    reply_markup: {
+      inline_keyboard: buttons
+    }
+  })
 }
 
 module.exports.commonStartMenu = async function (bot, msg, lang = 'pl') {
