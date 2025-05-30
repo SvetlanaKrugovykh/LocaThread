@@ -72,7 +72,7 @@ bot.on('callback_query', async (callbackQuery) => {
       if (!lang) lang = 'pl'
       await menu.notTextScene(bot, msg, lang, true, false, targetChatId)
     } else {
-      saveUserChoice(chatId, action)
+      await saveUserChoice(chatId, action)
     }
 
   } catch (error) {
