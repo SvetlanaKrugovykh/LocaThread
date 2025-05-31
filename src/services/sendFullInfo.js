@@ -1,12 +1,13 @@
 const { bot } = require("../globalBuffer")
+const { texts } = require('../data/keyboard')
 
 async function sendFullInfoToUser(chatId, dataForUser, lang = 'pl', delayMs = 1200) {
   for (const item of dataForUser) {
     let text =
       `<b>${item.title || ''}</b>\n` +
-      `<b>Цена:</b> ${item.price || ''}\n` +
-      `<b>Локация:</b> ${item.location || ''}\n` +
-      (item.link ? `<a href="${item.link}">Ссылка на объявление</a>\n` : '')
+      `<b> ${texts[lang]['Cena']}:</b> ${item.price || ''}\n` +
+      `<b> ${texts[lang]['Location']}:</b> ${item.location || ''}\n` +
+      (item.link ? `<a href="${item.link}">${texts[lang]['Link']}</a>\n` : '')
 
     const messages = splitByLength(text, 4096)
 
