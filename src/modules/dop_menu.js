@@ -7,6 +7,7 @@ const { sendFullInfoToUser } = require('../services/sendFullInfo')
 module.exports.dopMenuBez = async function (msg, lang = 'pl') {
   const data = await checkInputData(msg, lang)
   if (!data) return null
+  await bot.sendMessage(msg.chat.id, texts[lang]['infoWait'], { parse_mode: 'HTML' })
   const dataForUser = await goToExternalService(msg.chat.id, data)
   if (!dataForUser) {
     await bot.sendMessage(msg.chat.id, texts[lang]['noData'], { parse_mode: 'HTML' })
@@ -18,6 +19,7 @@ module.exports.dopMenuBez = async function (msg, lang = 'pl') {
 module.exports.dopMenuZ = async function (msg, lang = 'pl') {
   const data = await checkInputData(msg, lang)
   if (!data) return null
+  await bot.sendMessage(msg.chat.id, texts[lang]['needInfo'], { parse_mode: 'HTML' })
 }
 
 
