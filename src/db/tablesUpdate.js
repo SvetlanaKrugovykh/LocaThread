@@ -29,7 +29,7 @@ const tableQueries = {
   'apartment_types': `
       CREATE TABLE apartment_types (
         id SERIAL PRIMARY KEY,
-        name_pl VARCHAR(64) NOT NULL UNIQUE
+        name_pl INTEGER NOT NULL UNIQUE
       )`,
   'price_ranges': `
       CREATE TABLE price_ranges (
@@ -140,7 +140,7 @@ function fillDistrictsTable() {
 }
 
 function fillApartmentTypesTable() {
-  const values = types.map((name) => `('${name.replace("'", "''")}')`).join(',')
+  const values = types.map((num) => `(${num})`).join(',')
   const query = `INSERT INTO apartment_types (name_pl) VALUES ${values};`
   return new Promise((resolve, reject) => {
     pool.query(query, (err, res) => {

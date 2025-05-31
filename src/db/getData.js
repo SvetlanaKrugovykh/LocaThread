@@ -41,7 +41,13 @@ async function getLatestUserChoices(userId, category) {
       [userId, category, lastTime],
       (err, res) => {
         if (err) reject(err)
-        else resolve(res.rows.map(row => row.value))
+        else {
+          if (category === '5_2') {
+            resolve(res.rows.map(row => Number(row.value)))
+          } else {
+            resolve(res.rows.map(row => row.value))
+          }
+        }
       }
     )
   })

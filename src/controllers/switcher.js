@@ -56,10 +56,10 @@ async function handler(bot, msg) {
 
   switch (data) {
     case '0_0':
-      await textInput(bot, msg, data)
+      await dopMenuBez(msg, lang)
       break
     case '0_5':
-      await textInput(bot, msg, data)
+      await dopMenuZ(msg, lang)
       break
     case '0_1':
       await menu.commonSecondMenu(bot, msg, lang)
