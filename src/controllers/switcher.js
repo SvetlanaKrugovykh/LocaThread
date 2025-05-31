@@ -5,6 +5,8 @@ const { textInput } = require('../modules/common_functions')
 const { globalBuffer, selectedByUser } = require('../globalBuffer')
 const { pinNativeLanguage } = require('../db/putU')
 const { getUserData } = require('../db/getU')
+const { dopMenuBez, dopMenuZ } = require('../modules/dop_menu')
+
 
 require('dotenv').config()
 
@@ -54,6 +56,9 @@ async function handler(bot, msg) {
 
   switch (data) {
     case '0_0':
+      await textInput(bot, msg, data)
+      break
+    case '0_5':
       await textInput(bot, msg, data)
       break
     case '0_1':

@@ -74,6 +74,7 @@ module.exports.commonStartMenu = async function (bot, msg, lang = 'pl') {
   } else {
     if (user) {
       const lang = user?.language_code || 'pl'
+      await bot.sendMessage(msg.chat.id, texts[lang]['welcome'], { parse_mode: 'HTML', })
       await menuStarter(bot, msg, lang)
     } else {
       await module.exports.settingsMenu(bot, msg)

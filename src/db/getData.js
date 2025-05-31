@@ -12,7 +12,8 @@ module.exports.getAllFromTable = async function (tableName, nameField) {
   })
 }
 
-module.exports.getLatestUserChoices = async function (userId, category) {
+async function getLatestUserChoices(userId, category) {
+
   const lastTimeRes = await new Promise((resolve, reject) => {
     pool.query(
       `SELECT created_at FROM user_choices
@@ -46,3 +47,4 @@ module.exports.getLatestUserChoices = async function (userId, category) {
   })
 }
 
+module.exports.getLatestUserChoices = getLatestUserChoices
