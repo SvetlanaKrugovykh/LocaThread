@@ -20,20 +20,20 @@ const svc = new Service({
 })
 
 svc.on('install', () => {
-  logger.info('Service installed')
+  console.log('Service installed')
   svc.start()
 })
 svc.on('uninstall', () => {
-  logger.info('Service uninstalled')
+  console.log('Service uninstalled')
 })
 svc.on('alreadyinstalled', () => {
-  logger.info('Service already installed')
+  console.log('Service already installed')
 })
 svc.on('start', () => {
-  logger.info('Service started')
+  console.log('Service started')
 })
 svc.on('stop', () => {
-  logger.info('Service stopped')
+  console.log('Service stopped')
 })
 svc.on('error', (err) => {
   logger.error('Service error:', err)
@@ -45,5 +45,5 @@ if (arg === '--install') {
 } else if (arg === '--uninstall') {
   svc.uninstall()
 } else {
-  logger.info('Используйте: node src/winService.js --install или --uninstall')
+  console.log('Используйте: node src/winService.js --install или --uninstall')
 }
