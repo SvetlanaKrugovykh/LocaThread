@@ -1,0 +1,9 @@
+2025-06-01T11:08:13.407Z info: Directory created or already exists: C:\\Temp\\
+2025-06-01T11:08:13.409Z info: Directory created or already exists: C:\\Temp\\downloaded_files\\
+2025-06-01T11:08:13.430Z info: Table tg_users already exists.
+2025-06-01T11:08:13.432Z info: Table tg_msgs already exists.
+2025-06-01T11:08:13.433Z info: Table districts already exists.
+2025-06-01T11:08:13.434Z info: Table apartment_types already exists.
+2025-06-01T11:08:13.435Z info: Table price_ranges already exists.
+2025-06-01T11:08:13.436Z info: Table user_choices already exists.
+2025-06-01T11:08:13.437Z info: All tables created or already exist.
