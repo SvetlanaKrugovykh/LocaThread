@@ -4,11 +4,12 @@ const texts = require('../data/keyboard').texts
 const { goToExternalService } = require('../services/goToExtSErvice')
 const { sendFullInfoToUser } = require('../services/sendFullInfo')
 const { textInput } = require('../modules/common_functions')
-const { sendRequestToAdmins } = require('../services/sendToGroup')
+const { sendRequestToAdmins, sendWhatReqToAUser } = require('../services/sendToGroup')
 
 module.exports.dopMenuBez = async function (msg, lang = 'pl') {
   const data = await checkInputData(msg, lang)
   if (!data) return null
+  sendWhatReqToAUser(msg.chat.id, data, lang)
   await bot.sendMessage(msg.chat.id, texts[lang]['infoWait'], { parse_mode: 'HTML' })
   const dataForUser = await goToExternalService(msg.chat.id, data)
   if (!dataForUser) {

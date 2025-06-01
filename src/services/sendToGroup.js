@@ -41,4 +41,20 @@ function splitByLength(text, maxLen) {
   return result
 }
 
-module.exports.sendRequestToAdmins = sendRequestToAdmins
+
+async function sendWhatReqToAUser(chatId, data, lang = 'pl') {
+  let userInfo = `<b>${texts[lang]['userChoices']}</b>\n`
+  userInfo += `<b>${texts[lang]['districts']}</b> ${data.districts && data.districts.length ? data.districts.join(', ') : '-'}\n`
+  userInfo += `<b>${texts[lang]['rooms']}</b> ${data.rooms && data.rooms.length ? data.rooms.join(', ') : '-'}\n`
+  userInfo += `<b>${texts[lang]['priceRange']}</b> ${data.minPrice || '-'} - ${data.maxPrice || '-'} PLN\n`
+
+  const messages = splitByLength(userInfo, 4096)
+  for (const msg of messages) {
+    await bot.sendMessage(chatId, msg, { parse_mode: 'HTML' })
+  }
+}
+
+module.exports = {
+  sendRequestToAdmins,
+  sendWhatReqToAUser
+}
