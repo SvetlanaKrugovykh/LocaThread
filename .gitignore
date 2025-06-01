@@ -9,4 +9,6 @@ temp
 .eslint*
 assets
 users
+logs
+
 
