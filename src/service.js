@@ -1,14 +1,7 @@
-/**
- *   node src/winService.js --install
- *   node src/winService.js --uninstall
- */
-
 const Service = require('node-windows').Service
 const path = require('path')
 
-
 const scriptPath = path.join(__dirname, 'index.js')
-
 
 const svc = new Service({
   name: 'LocaThreadBot',
