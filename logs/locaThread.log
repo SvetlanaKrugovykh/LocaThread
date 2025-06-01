@@ -154,3 +154,7 @@
 2025-06-01T13:01:43.823Z info: Table price_ranges already exists.
 2025-06-01T13:01:43.824Z info: Table user_choices already exists.
 2025-06-01T13:01:43.825Z info: All tables created or already exist.
+2025-06-01T13:01:49.994Z info: The choice is:
+2025-06-01T13:02:30.185Z info: Response from external service:
+2025-06-01T13:02:30.189Z error: (node:24072) [node-telegram-bot-api] DeprecationWarning: Buffers will have their filenames default to "filename" instead of "data". See https://github.com/yagop/node-telegram-bot-api/blob/master/doc/usage.md#sending-files for more information on how sending files has been improved and on how to disable this deprecation message altogether.
+(Use `node --trace-deprecation ...` to show where the warning was created)
