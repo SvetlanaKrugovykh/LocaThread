@@ -13,7 +13,7 @@ module.exports.dopMenuBez = async function (msg, lang = 'pl') {
   await bot.sendMessage(msg.chat.id, texts[lang]['infoWait'], { parse_mode: 'HTML' })
   const dataForUser = await goToExternalService(msg.chat.id, data)
   if (!dataForUser) {
-    await bot.sendMessage(msg.chat.id, texts[lang]['noData'], { parse_mode: 'HTML' })
+    await bot.sendMessage(msg.chat.id, texts[lang]['errorExternal'], { parse_mode: 'HTML' })
     return null
   }
   await sendFullInfoToUser(msg.chat.id, dataForUser, lang)
