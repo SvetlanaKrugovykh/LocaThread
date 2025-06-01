@@ -29,9 +29,10 @@ module.exports.dopMenuZ = async function (msg, lang = 'pl') {
 
 async function checkInputData(msg, lang = 'pl') {
   const userId = msg.chat.id
-  const districts = await getLatestUserChoices(userId, '5_1')
-  const rooms = await getLatestUserChoices(userId, '5_2')
-  const priceRanges = await getLatestUserChoices(userId, '5_3')
+  const districts = [...new Set(await getLatestUserChoices(userId, '5_1'))]
+  const rooms = [...new Set(await getLatestUserChoices(userId, '5_2'))]
+  const priceRanges = [...new Set(await getLatestUserChoices(userId, '5_3'))]
+
   if (!districts.length || !priceRanges.length) {
     await bot.sendMessage(msg.chat.id, texts[lang]['noData'], { parse_mode: 'HTML' })
     return null
