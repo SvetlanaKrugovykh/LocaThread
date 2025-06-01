@@ -13,4 +13,4 @@ logs
 *.xml
 *.exe
 *.log
-
+*.config
