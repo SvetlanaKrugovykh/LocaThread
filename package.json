@@ -4,6 +4,7 @@
     "dotenv": "^16.5.0",
     "fs": "^0.0.1-security",
     "node-telegram-bot-api": "^0.66.0",
+    "node-windows": "^1.0.0-beta.8",
     "path": "^0.12.7",
     "pg": "^8.16.0"
   }

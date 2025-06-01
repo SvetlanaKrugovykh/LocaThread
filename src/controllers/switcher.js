@@ -1,7 +1,6 @@
 const { buttonsConfig } = require('../data/keyboard')
 const { testsMenu } = require('../data/tests_keyboard')
 const menu = require('../modules/common_menu')
-const { textInput } = require('../modules/common_functions')
 const { globalBuffer, selectedByUser } = require('../globalBuffer')
 const { pinNativeLanguage } = require('../db/putU')
 const { getUserData } = require('../db/getU')
@@ -60,6 +59,7 @@ async function handler(bot, msg) {
       break
     case '0_5':
       await dopMenuZ(msg, lang)
+      await menu.commonStartMenu(bot, msg, lang)
       break
     case '0_1':
       await menu.commonSecondMenu(bot, msg, lang)

@@ -3,6 +3,8 @@ const { getLatestUserChoices } = require("../db/getData")
 const texts = require('../data/keyboard').texts
 const { goToExternalService } = require('../services/goToExtSErvice')
 const { sendFullInfoToUser } = require('../services/sendFullInfo')
+const { textInput } = require('../modules/common_functions')
+const { sendRequestToAdmins } = require('../services/sendToGroup')
 
 module.exports.dopMenuBez = async function (msg, lang = 'pl') {
   const data = await checkInputData(msg, lang)
@@ -20,6 +22,8 @@ module.exports.dopMenuZ = async function (msg, lang = 'pl') {
   const data = await checkInputData(msg, lang)
   if (!data) return null
   await bot.sendMessage(msg.chat.id, texts[lang]['needInfo'], { parse_mode: 'HTML' })
+  await textInput(bot, msg)
+  await sendRequestToAdmins(msg.chat.id, data, lang)
 }
 
 

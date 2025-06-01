@@ -1,5 +1,5 @@
 const { inputLineScene } = require('../controllers/inputLine')
-const { globalBuffer, selectedByUser } = require('../globalBuffer')
+const { selectedByUser } = require('../globalBuffer')
 
 module.exports.textInput = async function (bot, msg) {
   try {

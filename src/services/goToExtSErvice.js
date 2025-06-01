@@ -26,7 +26,7 @@ async function goToExternalService(userId, data) {
     return response.data
   } catch (err) {
     console.error('Error sending user choices:', err)
-    throw err
+    return null
   }
 }
 
