@@ -10,5 +10,6 @@ temp
 assets
 users
 logs
+*.xml
 
 
