@@ -1,8 +1,6 @@
 require('dotenv').config()
-const { inputLineScene, inputLineAdminScene } = require('../controllers/inputLine')
+const { inputLineScene } = require('../controllers/inputLine')
 const { buttonsConfig } = require('../data/keyboard')
-const GROUP_ID = Number(process.env.GROUP_ID)
-const { globalBuffer, selectedByUser } = require('../globalBuffer')
 require('dotenv').config()
 
 async function actionsOnId(bot, msg, inputLine) {
