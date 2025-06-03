@@ -14,5 +14,4 @@ logs
 *.exe
 *.log
 *.config
-*.logs
-
+locaThread.log
