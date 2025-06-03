@@ -1,160 +1,45 @@
-2025-06-01T11:08:13.407Z info: Directory created or already exists: C:\\Temp\\
-2025-06-01T11:08:13.409Z info: Directory created or already exists: C:\\Temp\\downloaded_files\\
-2025-06-01T11:08:13.430Z info: Table tg_users already exists.
-2025-06-01T11:08:13.432Z info: Table tg_msgs already exists.
-2025-06-01T11:08:13.433Z info: Table districts already exists.
-2025-06-01T11:08:13.434Z info: Table apartment_types already exists.
-2025-06-01T11:08:13.435Z info: Table price_ranges already exists.
-2025-06-01T11:08:13.436Z info: Table user_choices already exists.
-2025-06-01T11:08:13.437Z info: All tables created or already exist.
-2025-06-01T11:08:24.449Z info: Sun Jun 01 2025 13:08:24 GMT+0200 (Central European Summer Time)
-2025-06-01T11:08:24.450Z info: [object Object]
-2025-06-01T11:08:24.450Z info: /start at Sun Jun 01 2025 13:08:24 GMT+0200 (Central European Summer Time) tg_user_id: 701079281
-2025-06-01T11:08:24.451Z info: [object Object]
-2025-06-01T11:08:24.569Z info: 1:08:24 PM
-2025-06-01T11:08:27.946Z info: The choice is:
-2025-06-01T11:08:36.466Z info: The choice is:
-2025-06-01T11:08:37.378Z info: The choice is:
-2025-06-01T11:08:38.537Z info: Callback query received:
-2025-06-01T11:08:39.482Z info: The choice is:
-2025-06-01T11:08:40.310Z info: Callback query received:
-2025-06-01T11:08:41.134Z info: The choice is:
-2025-06-01T11:08:42.259Z info: Callback query received:
-2025-06-01T11:08:44.020Z info: The choice is:
-2025-06-01T11:08:44.021Z info: /start at Sun Jun 01 2025 13:08:44 GMT+0200 (Central European Summer Time) tg_user_id: 701079281
-2025-06-01T11:08:44.022Z info: [object Object]
-2025-06-01T11:08:44.087Z info: 1:08:44 PM
-2025-06-01T12:11:28.182Z info: Directory created or already exists: C:\\Temp\\
-2025-06-01T12:11:28.184Z info: Directory created or already exists: C:\\Temp\\downloaded_files\\
-2025-06-01T12:11:28.210Z info: Table tg_users already exists.
-2025-06-01T12:11:28.211Z info: Table tg_msgs already exists.
-2025-06-01T12:11:28.213Z info: Table districts already exists.
-2025-06-01T12:11:28.214Z info: Table apartment_types already exists.
-2025-06-01T12:11:28.215Z info: Table price_ranges already exists.
-2025-06-01T12:11:28.217Z info: Table user_choices already exists.
-2025-06-01T12:11:28.217Z info: All tables created or already exist.
-2025-06-01T12:12:46.878Z info: Sun Jun 01 2025 14:12:46 GMT+0200 (Central European Summer Time)
-2025-06-01T12:12:46.879Z info: [object Object]
-2025-06-01T12:12:46.879Z info: /start at Sun Jun 01 2025 14:12:46 GMT+0200 (Central European Summer Time) tg_user_id: 5887602942
-2025-06-01T12:12:46.880Z info: [object Object]
-2025-06-01T12:12:47.038Z info: 2:12:47 PM
-2025-06-01T12:12:49.185Z info: The choice is:
-2025-06-01T12:12:50.235Z info: The choice is:
-2025-06-01T12:12:51.764Z info: Callback query received:
-2025-06-01T12:12:53.605Z info: The choice is:
-2025-06-01T12:12:54.694Z info: Callback query received:
-2025-06-01T12:12:55.637Z info: The choice is:
-2025-06-01T12:12:57.825Z info: Callback query received:
-2025-06-01T12:13:00.681Z info: The choice is:
-2025-06-01T12:13:00.682Z info: /start at Sun Jun 01 2025 14:13:00 GMT+0200 (Central European Summer Time) tg_user_id: 5887602942
-2025-06-01T12:13:00.682Z info: [object Object]
-2025-06-01T12:13:00.791Z info: 2:13:00 PM
-2025-06-01T12:13:02.445Z info: The choice is:
-2025-06-01T12:14:08.681Z error: Polling error:
-2025-06-01T12:15:01.096Z info: The choice is:
-2025-06-01T12:15:04.276Z info: The choice is:
-2025-06-01T12:15:05.848Z info: The choice is:
-2025-06-01T12:15:07.325Z info: Callback query received:
-2025-06-01T12:15:09.339Z info: The choice is:
-2025-06-01T12:15:10.507Z info: Callback query received:
-2025-06-01T12:15:11.451Z info: The choice is:
-2025-06-01T12:15:13.176Z info: Callback query received:
-2025-06-01T12:15:14.330Z info: The choice is:
-2025-06-01T12:15:14.330Z info: /start at Sun Jun 01 2025 14:15:14 GMT+0200 (Central European Summer Time) tg_user_id: 5887602942
-2025-06-01T12:15:14.331Z info: [object Object]
-2025-06-01T12:15:14.435Z info: 2:15:14 PM
-2025-06-01T12:15:16.139Z info: The choice is:
-2025-06-01T12:15:57.122Z info: Response from external service:
-2025-06-01T12:15:57.125Z error: (node:23264) [node-telegram-bot-api] DeprecationWarning: Buffers will have their filenames default to "filename" instead of "data". See https://github.com/yagop/node-telegram-bot-api/blob/master/doc/usage.md#sending-files for more information on how sending files has been improved and on how to disable this deprecation message altogether.
-(Use `node --trace-deprecation ...` to show where the warning was created)
-2025-06-01T12:37:11.157Z info: Directory created or already exists: C:\\Temp\\
-2025-06-01T12:37:11.160Z info: Directory created or already exists: C:\\Temp\\downloaded_files\\
-2025-06-01T12:37:11.189Z info: Table tg_users already exists.
-2025-06-01T12:37:11.192Z info: Table tg_msgs already exists.
-2025-06-01T12:37:11.193Z info: Table districts already exists.
-2025-06-01T12:37:11.196Z info: Table apartment_types already exists.
-2025-06-01T12:37:11.198Z info: Table price_ranges already exists.
-2025-06-01T12:37:11.200Z info: Table user_choices already exists.
-2025-06-01T12:37:11.201Z info: All tables created or already exist.
-2025-06-01T12:37:18.293Z info: The choice is:
-2025-06-01T12:37:18.293Z info: /start at Sun Jun 01 2025 14:37:18 GMT+0200 (Central European Summer Time) tg_user_id: 5887602942
-2025-06-01T12:37:18.294Z info: [object Object]
-2025-06-01T12:37:18.426Z info: 2:37:18 PM
-2025-06-01T12:37:19.350Z info: The choice is:
-2025-06-01T12:37:19.475Z error: Error sending user choices:
-2025-06-01T12:38:36.920Z info: The choice is:
-2025-06-01T12:38:38.284Z info: The choice is:
-2025-06-01T12:38:39.666Z info: Callback query received:
-2025-06-01T12:38:40.927Z info: The choice is:
-2025-06-01T12:38:41.995Z info: Callback query received:
-2025-06-01T12:38:42.805Z info: The choice is:
-2025-06-01T12:38:44.595Z info: Callback query received:
-2025-06-01T12:38:46.469Z info: The choice is:
-2025-06-01T12:38:46.469Z info: /start at Sun Jun 01 2025 14:38:46 GMT+0200 (Central European Summer Time) tg_user_id: 5887602942
-2025-06-01T12:38:46.470Z info: [object Object]
-2025-06-01T12:38:46.591Z info: 2:38:46 PM
-2025-06-01T12:38:47.599Z info: The choice is:
-2025-06-01T12:38:47.658Z error: Error sending user choices:
-2025-06-01T12:39:01.723Z info: The choice is:
-2025-06-01T12:39:03.114Z info: The choice is:
-2025-06-01T12:39:05.090Z info: Callback query received:
-2025-06-01T12:39:06.354Z info: The choice is:
-2025-06-01T12:39:07.314Z info: Callback query received:
-2025-06-01T12:39:08.404Z info: The choice is:
-2025-06-01T12:39:09.464Z info: Callback query received:
-2025-06-01T12:39:12.528Z info: The choice is:
-2025-06-01T12:39:12.528Z info: /start at Sun Jun 01 2025 14:39:12 GMT+0200 (Central European Summer Time) tg_user_id: 5887602942
-2025-06-01T12:39:12.529Z info: [object Object]
-2025-06-01T12:39:12.643Z info: 2:39:12 PM
-2025-06-01T12:39:13.865Z info: The choice is:
-2025-06-01T12:39:13.941Z error: Error sending user choices:
-2025-06-01T12:40:47.766Z info: Sun Jun 01 2025 14:40:47 GMT+0200 (Central European Summer Time)
-2025-06-01T12:40:47.766Z info: [object Object]
-2025-06-01T12:40:47.767Z info: /start at Sun Jun 01 2025 14:40:47 GMT+0200 (Central European Summer Time) tg_user_id: 5887602942
-2025-06-01T12:40:47.768Z info: [object Object]
-2025-06-01T12:40:48.012Z info: 2:40:48 PM
-2025-06-01T12:40:53.187Z info: The choice is:
-2025-06-01T12:40:54.257Z info: The choice is:
-2025-06-01T12:40:55.640Z info: Callback query received:
-2025-06-01T12:40:56.973Z info: The choice is:
-2025-06-01T12:40:58.182Z info: Callback query received:
-2025-06-01T12:40:59.078Z info: The choice is:
-2025-06-01T12:41:00.471Z info: Callback query received:
-2025-06-01T12:41:02.964Z info: The choice is:
-2025-06-01T12:41:02.965Z info: /start at Sun Jun 01 2025 14:41:02 GMT+0200 (Central European Summer Time) tg_user_id: 5887602942
-2025-06-01T12:41:02.967Z info: [object Object]
-2025-06-01T12:41:03.111Z info: 2:41:03 PM
-2025-06-01T12:41:24.200Z info: The choice is:
-2025-06-01T12:42:36.339Z error: Error sending user choices:
-2025-06-01T12:43:13.076Z info: The choice is:
-2025-06-01T12:44:15.702Z info: Response from external service:
-2025-06-01T12:44:15.704Z error: (node:34880) [node-telegram-bot-api] DeprecationWarning: Buffers will have their filenames default to "filename" instead of "data". See https://github.com/yagop/node-telegram-bot-api/blob/master/doc/usage.md#sending-files for more information on how sending files has been improved and on how to disable this deprecation message altogether.
-(Use `node --trace-deprecation ...` to show where the warning was created)
-2025-06-01T12:52:44.736Z info: The choice is:
-2025-06-01T12:54:36.184Z error: Error sending user choices:
-2025-06-01T12:54:56.339Z info: The choice is:
-2025-06-01T12:54:57.720Z info: The choice is:
-2025-06-01T12:54:59.202Z info: Callback query received:
-2025-06-01T12:55:02.195Z info: The choice is:
-2025-06-01T12:55:03.215Z info: Callback query received:
-2025-06-01T12:55:03.987Z info: The choice is:
-2025-06-01T12:55:05.288Z info: Callback query received:
-2025-06-01T12:55:07.470Z info: The choice is:
-2025-06-01T12:55:07.470Z info: /start at Sun Jun 01 2025 14:55:07 GMT+0200 (Central European Summer Time) tg_user_id: 5887602942
-2025-06-01T12:55:07.471Z info: [object Object]
-2025-06-01T12:55:07.593Z info: 2:55:07 PM
-2025-06-01T12:55:08.945Z info: The choice is:
-2025-06-01T12:56:11.323Z info: Response from external service:
-2025-06-01T13:01:43.796Z info: Directory created or already exists: C:\\Temp\\downloaded_files\\
-2025-06-01T13:01:43.798Z info: Directory created or already exists: C:\\Temp\\
-2025-06-01T13:01:43.819Z info: Table tg_users already exists.
-2025-06-01T13:01:43.820Z info: Table tg_msgs already exists.
-2025-06-01T13:01:43.821Z info: Table districts already exists.
-2025-06-01T13:01:43.822Z info: Table apartment_types already exists.
-2025-06-01T13:01:43.823Z info: Table price_ranges already exists.
-2025-06-01T13:01:43.824Z info: Table user_choices already exists.
-2025-06-01T13:01:43.825Z info: All tables created or already exist.
-2025-06-01T13:01:49.994Z info: The choice is:
-2025-06-01T13:02:30.185Z info: Response from external service:
-2025-06-01T13:02:30.189Z error: (node:24072) [node-telegram-bot-api] DeprecationWarning: Buffers will have their filenames default to "filename" instead of "data". See https://github.com/yagop/node-telegram-bot-api/blob/master/doc/usage.md#sending-files for more information on how sending files has been improved and on how to disable this deprecation message altogether.
-(Use `node --trace-deprecation ...` to show where the warning was created)
+
+2025-06-03T09:58:58.273Z info: Directory created or already exists: C:\\Temp\\downloaded_files\\
+2025-06-03T09:58:58.276Z info: Directory created or already exists: C:\\Temp\\
+2025-06-03T09:58:58.394Z info: Table tg_users already exists.
+2025-06-03T09:58:58.395Z info: Table tg_msgs already exists.
+2025-06-03T09:58:58.396Z info: Table districts already exists.
+2025-06-03T09:58:58.397Z info: Table apartment_types already exists.
+2025-06-03T09:58:58.399Z info: Table price_ranges already exists.
+2025-06-03T09:58:58.400Z info: Table user_choices already exists.
+2025-06-03T09:58:58.400Z info: All tables created or already exist.
+2025-06-03T09:58:58.530Z info: The choice is: 9_3 for chatId: 6515401574 and lang: pl
+2025-06-03T09:59:10.387Z info: The choice is: 0_3 for chatId: 6515401574 and lang: uk
+2025-06-03T09:59:10.388Z info: /start at Tue Jun 03 2025 11:59:10 GMT+0200 (Central European Summer Time) tg_user_id: 6515401574
+2025-06-03T09:59:10.394Z info: [object Object]
+2025-06-03T09:59:10.578Z info: 11:59:10 AM
+2025-06-03T10:02:28.207Z info: Directory created or already exists: C:\\Temp\\downloaded_files\\
+2025-06-03T10:02:28.209Z info: Directory created or already exists: C:\\Temp\\
+2025-06-03T10:02:28.230Z info: Table tg_users already exists.
+2025-06-03T10:02:28.231Z info: Table tg_msgs already exists.
+2025-06-03T10:02:28.232Z info: Table districts already exists.
+2025-06-03T10:02:28.233Z info: Table apartment_types already exists.
+2025-06-03T10:02:28.235Z info: Table price_ranges already exists.
+2025-06-03T10:02:28.236Z info: Table user_choices already exists.
+2025-06-03T10:02:28.236Z info: All tables created or already exist.
+2025-06-03T10:02:42.107Z info: Tue Jun 03 2025 12:02:42 GMT+0200 (Central European Summer Time)
+2025-06-03T10:02:42.107Z info: [object Object]
+2025-06-03T10:02:42.107Z info: /start at Tue Jun 03 2025 12:02:42 GMT+0200 (Central European Summer Time) tg_user_id: 6515401574
+2025-06-03T10:02:42.109Z info: null
+2025-06-03T10:02:43.561Z info: The choice is: 1_2 for chatId: 6515401574 and lang: pl
+2025-06-03T10:02:45.137Z info: The choice is: 9_3 for chatId: 6515401574 and lang: pl
+2025-06-03T10:03:06.685Z info: Directory created or already exists: C:\\Temp\\downloaded_files\\
+2025-06-03T10:03:06.687Z info: Directory created or already exists: C:\\Temp\\
+2025-06-03T10:03:06.800Z info: Table tg_users already exists.
+2025-06-03T10:03:06.802Z info: Table tg_msgs already exists.
+2025-06-03T10:03:06.803Z info: Table districts already exists.
+2025-06-03T10:03:06.804Z info: Table apartment_types already exists.
+2025-06-03T10:03:06.806Z info: Table price_ranges already exists.
+2025-06-03T10:03:06.807Z info: Table user_choices already exists.
+2025-06-03T10:03:06.807Z info: All tables created or already exist.
+2025-06-03T10:03:06.857Z info: The choice is: 9_3 for chatId: 6515401574 and lang: uk
+2025-06-03T10:03:06.965Z info: The choice is: 0_3 for chatId: 6515401574 and lang: uk
+2025-06-03T10:03:06.966Z info: /start at Tue Jun 03 2025 12:03:06 GMT+0200 (Central European Summer Time) tg_user_id: 6515401574
+2025-06-03T10:03:06.967Z info: [object Object]
+2025-06-03T10:03:06.968Z info: User language updated: uk for user_id: 6515401574 and selected_lang: uk
+2025-06-03T10:03:07.103Z info: 12:03:07 PM

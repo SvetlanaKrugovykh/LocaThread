@@ -40,18 +40,20 @@ function getCallbackData(text) {
 async function handler(bot, msg) {
   const chatId = msg?.chat?.id
   if (globalBuffer[chatId] === undefined) globalBuffer[chatId] = {}
+  if (selectedByUser[chatId] === undefined) selectedByUser[chatId] = {}
 
   if (!chatId || !msg?.text) return
 
   const data = getCallbackData(msg.text)
   if (!data) return
 
-  if (!selectedByUser[chatId]) selectedByUser[chatId] = await getUserData(chatId)
+  if (!selectedByUser[chatId]) selectedByUser[chatId] = {}
   if (!globalBuffer[chatId]) globalBuffer[chatId] = {}
 
+  selectedByUser[chatId] = await getUserData(chatId, true)
   let lang = selectedByUser[chatId]?.language || 'pl'
 
-  console.log('The choice is:', data)
+  console.log(`The choice is: ${data} for chatId: ${chatId} and lang: ${lang}`)
 
   switch (data) {
     case '0_0':
