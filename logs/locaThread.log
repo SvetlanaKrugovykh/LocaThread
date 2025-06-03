@@ -75,3 +75,12 @@
 2025-06-03T10:04:03.287Z info: /start at Tue Jun 03 2025 12:04:03 GMT+0200 (Central European Summer Time) tg_user_id: 6515401574
 2025-06-03T10:04:03.287Z info: [object Object]
 2025-06-03T10:04:03.393Z info: 12:04:03 PM
+2025-06-03T10:06:04.239Z info: The choice is: 0_8 for chatId: 701079281 and lang: ru
+2025-06-03T10:06:05.746Z info: The choice is: 1_2 for chatId: 701079281 and lang: ru
+2025-06-03T10:06:07.424Z info: The choice is: 9_3 for chatId: 701079281 and lang: ru
+2025-06-03T10:06:07.528Z info: User language updated: uk for user_id: 701079281 and selected_lang: uk
+2025-06-03T10:06:10.019Z info: The choice is: 0_4 for chatId: 701079281 and lang: uk
+2025-06-03T10:06:10.019Z info: /start at Tue Jun 03 2025 12:06:10 GMT+0200 (Central European Summer Time) tg_user_id: 701079281
+2025-06-03T10:06:10.020Z info: [object Object]
+2025-06-03T10:06:10.143Z info: 12:06:10 PM
+2025-06-03T10:06:17.435Z info: The choice is: 0_1 for chatId: 701079281 and lang: uk
