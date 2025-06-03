@@ -43,3 +43,35 @@
 2025-06-03T10:03:06.967Z info: [object Object]
 2025-06-03T10:03:06.968Z info: User language updated: uk for user_id: 6515401574 and selected_lang: uk
 2025-06-03T10:03:07.103Z info: 12:03:07 PM
+2025-06-03T10:03:29.691Z info: Directory created or already exists: C:\\Temp\\downloaded_files\\
+2025-06-03T10:03:29.693Z info: Directory created or already exists: C:\\Temp\\
+2025-06-03T10:03:29.808Z info: Table tg_users already exists.
+2025-06-03T10:03:29.810Z info: Table tg_msgs already exists.
+2025-06-03T10:03:29.811Z info: Table districts already exists.
+2025-06-03T10:03:29.812Z info: Table apartment_types already exists.
+2025-06-03T10:03:29.813Z info: Table price_ranges already exists.
+2025-06-03T10:03:29.814Z info: Table user_choices already exists.
+2025-06-03T10:03:29.814Z info: All tables created or already exist.
+2025-06-03T10:03:35.370Z info: The choice is: 0_4 for chatId: 6515401574 and lang: pl
+2025-06-03T10:03:35.370Z info: /start at Tue Jun 03 2025 12:03:35 GMT+0200 (Central European Summer Time) tg_user_id: 6515401574
+2025-06-03T10:03:35.371Z info: null
+2025-06-03T10:03:38.613Z info: The choice is: 1_2 for chatId: 6515401574 and lang: pl
+2025-06-03T10:03:40.176Z info: The choice is: 9_3 for chatId: 6515401574 and lang: pl
+2025-06-03T10:03:40.285Z info: User language updated: uk for user_id: 6515401574 and selected_lang: uk
+2025-06-03T10:03:41.277Z info: The choice is: 0_3 for chatId: 6515401574 and lang: uk
+2025-06-03T10:03:41.278Z info: /start at Tue Jun 03 2025 12:03:41 GMT+0200 (Central European Summer Time) tg_user_id: 6515401574
+2025-06-03T10:03:41.279Z info: [object Object]
+2025-06-03T10:03:41.560Z info: 12:03:41 PM
+2025-06-03T10:03:43.314Z info: The choice is: 0_1 for chatId: 6515401574 and lang: uk
+2025-06-03T10:04:00.176Z info: The choice is: 0_3 for chatId: 6515401574 and lang: uk
+2025-06-03T10:04:00.177Z info: /start at Tue Jun 03 2025 12:04:00 GMT+0200 (Central European Summer Time) tg_user_id: 6515401574
+2025-06-03T10:04:00.178Z info: [object Object]
+2025-06-03T10:04:00.382Z info: 12:04:00 PM
+2025-06-03T10:04:01.855Z info: The choice is: 0_4 for chatId: 6515401574 and lang: uk
+2025-06-03T10:04:01.855Z info: /start at Tue Jun 03 2025 12:04:01 GMT+0200 (Central European Summer Time) tg_user_id: 6515401574
+2025-06-03T10:04:01.856Z info: [object Object]
+2025-06-03T10:04:01.979Z info: 12:04:01 PM
+2025-06-03T10:04:03.286Z info: The choice is: 0_4 for chatId: 6515401574 and lang: uk
+2025-06-03T10:04:03.287Z info: /start at Tue Jun 03 2025 12:04:03 GMT+0200 (Central European Summer Time) tg_user_id: 6515401574
+2025-06-03T10:04:03.287Z info: [object Object]
+2025-06-03T10:04:03.393Z info: 12:04:03 PM
