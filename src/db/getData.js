@@ -13,7 +13,6 @@ module.exports.getAllFromTable = async function (tableName, nameField) {
 }
 
 async function getLatestUserChoices(userId, category) {
-
   const lastTimeRes = await new Promise((resolve, reject) => {
     pool.query(
       `SELECT created_at FROM user_choices
@@ -32,7 +31,7 @@ async function getLatestUserChoices(userId, category) {
 
   const lastTime = lastTimeRes.rows[0].created_at
 
-  return new Promise((resolve, reject) => {
+  const result = await new Promise((resolve, reject) => {
     pool.query(
       `SELECT value FROM user_choices
        WHERE user_id = $1 AND category = $2
@@ -41,16 +40,37 @@ async function getLatestUserChoices(userId, category) {
       [userId, category, lastTime],
       (err, res) => {
         if (err) reject(err)
-        else {
-          if (category === '5_2') {
-            resolve(res.rows.map(row => Number(row.value)))
-          } else {
-            resolve(res.rows.map(row => row.value))
-          }
-        }
+        else resolve(res.rows)
       }
     )
   })
+
+  if (!result.length) {
+    const lastValueRes = await new Promise((resolve, reject) => {
+      pool.query(
+        `SELECT value FROM user_choices
+         WHERE user_id = $1 AND category = $2
+         ORDER BY created_at DESC
+         LIMIT 1`,
+        [userId, category],
+        (err, res) => {
+          if (err) reject(err)
+          else resolve(res.rows)
+        }
+      )
+    })
+    if (category === '5_2') {
+      return lastValueRes.map(row => Number(row.value))
+    } else {
+      return lastValueRes.map(row => row.value)
+    }
+  }
+
+  if (category === '5_2') {
+    return result.map(row => Number(row.value))
+  } else {
+    return result.map(row => row.value)
+  }
 }
 
 module.exports.getLatestUserChoices = getLatestUserChoices
