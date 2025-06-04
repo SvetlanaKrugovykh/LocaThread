@@ -78,7 +78,6 @@ module.exports.commonStartMenu = async function (bot, msg, lang = 'pl') {
       await menuStarter(bot, msg, lang)
     } else {
       await module.exports.settingsMenu(bot, msg)
-      await blockMenu(bot, msg)
     }
   }
 }
