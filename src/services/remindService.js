@@ -1,6 +1,10 @@
 const pool = require('../db/pool')
 const { bot } = require('../globalBuffer')
 const { checkInputData } = require('../modules/dop_menu')
+const { sendWhatReqToAUser } = require('../services/sendToGroup')
+const { texts } = require('../data/keyboard')
+const { goToExternalService } = require('./goToExtSErvice')
+const { sendFullInfoToUser } = require('./sendFullInfo')
 require('dotenv').config()
 
 module.exports.checkAndSendReminders = async function () {
@@ -12,7 +16,7 @@ module.exports.checkAndSendReminders = async function () {
 
   for (const { user_id: userId, language_code: lang } of reminders) {
     try {
-      const data = await checkInputData(userId, lang)
+      const data = await checkInputData(userId, lang, true)
       if (!data) continue
       await sendWhatReqToAUser(userId, data, lang)
       await bot.sendMessage(userId, texts[lang]['infoWait'], { parse_mode: 'HTML' })
