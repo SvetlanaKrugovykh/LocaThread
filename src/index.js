@@ -9,6 +9,8 @@ const fs = require('fs')
 const logger = require('./logger')
 const updateTables = require('./db/tablesUpdate').updateTables
 const saveUserChoice = require('./db/putData').saveUserChoice
+const remind = require('./services/remindService')
+const cron = require('node-cron')
 require('dotenv').config()
 
 
@@ -89,6 +91,13 @@ bot.on('polling_error', (error) => {
     bot.stopPolling()
       .then(() => bot.startPolling())
       .catch(err => console.error('Failed to restart polling:', err))
+  }
+})
+
+cron.schedule('0 * * * *', () => {
+  const currentHour = new Date().getHours()
+  if (currentHour >= 9 && currentHour < 22) {
+    remind.checkAndSendReminders()
   }
 })
 

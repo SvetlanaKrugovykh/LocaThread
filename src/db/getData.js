@@ -1,4 +1,5 @@
 const pool = require('./pool')
+require('dotenv').config()
 
 module.exports.getAllFromTable = async function (tableName, nameField) {
   return new Promise((resolve, reject) => {
@@ -13,10 +14,13 @@ module.exports.getAllFromTable = async function (tableName, nameField) {
 }
 
 async function getLatestUserChoices(userId, category) {
+  const activeDays = Number(process.env.ACTIVE_DAYS) || 3
+
   const lastTimeRes = await new Promise((resolve, reject) => {
     pool.query(
       `SELECT created_at FROM user_choices
        WHERE user_id = $1 AND category = $2
+         AND created_at > NOW() - INTERVAL '${activeDays} days'
        ORDER BY created_at DESC
        LIMIT 1`,
       [userId, category],
@@ -36,6 +40,7 @@ async function getLatestUserChoices(userId, category) {
       `SELECT value FROM user_choices
        WHERE user_id = $1 AND category = $2
          AND created_at BETWEEN ($3::timestamp - INTERVAL '1 hour') AND $3::timestamp
+         AND created_at > NOW() - INTERVAL '${activeDays} days'
        ORDER BY created_at DESC`,
       [userId, category, lastTime],
       (err, res) => {
@@ -50,6 +55,7 @@ async function getLatestUserChoices(userId, category) {
       pool.query(
         `SELECT value FROM user_choices
          WHERE user_id = $1 AND category = $2
+           AND created_at > NOW() - INTERVAL '${activeDays} days'
          ORDER BY created_at DESC
          LIMIT 1`,
         [userId, category],
