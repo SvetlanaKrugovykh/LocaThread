@@ -8,6 +8,7 @@ const { buttonsConfig, texts } = require('../data/keyboard')
 const { globalBuffer } = require('../globalBuffer')
 const getU = require('../db/getU')
 const getAllFromTable = require('../db/getData').getAllFromTable
+const { deleteUserChoicesForPeriod } = require('../db/putData')
 
 const ADMINS = process.env.ADMINS
   ? process.env.ADMINS.split(',').map(id => id.trim())
@@ -15,6 +16,13 @@ const ADMINS = process.env.ADMINS
 
 function isAdmin(userId) {
   return ADMINS.includes(String(userId))
+}
+
+module.exports.cancelChoices = async function (bot, msg, lang) {
+  const chatId = msg?.chat?.id
+  if (!chatId || !msg?.text) return
+  await deleteUserChoicesForPeriod(chatId)
+  await bot.sendMessage(chatId, texts[lang]['0_29'])
 }
 
 module.exports.choiceFromBD = async function (bot, msg, lang = 'pl', choice) {

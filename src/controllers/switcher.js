@@ -92,6 +92,9 @@ async function handler(bot, msg) {
     case '5_3':
       await menu.choiceFromBD(bot, msg, lang, data)
       break
+    case '5_9':
+      await menu.cancelChoices(bot, msg, lang)
+      break
     case '9_1':
     case '9_2':
     case '9_3':

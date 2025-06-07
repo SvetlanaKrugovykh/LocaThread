@@ -20,3 +20,22 @@ module.exports.saveUserChoice = async function (userId, action) {
     )
   })
 }
+
+
+module.exports.deleteUserChoicesForPeriod = async function (userId) {
+  const activeDays = Number(process.env.ACTIVE_DAYS) || 3
+
+  return new Promise((resolve, reject) => {
+    pool.query(
+      `DELETE FROM user_choices
+       WHERE user_id = $1
+         AND created_at > NOW() - INTERVAL '${activeDays} days'
+         AND created_at <= NOW()`,
+      [userId],
+      (err, res) => {
+        if (err) reject(err)
+        else resolve(true)
+      }
+    )
+  })
+}
